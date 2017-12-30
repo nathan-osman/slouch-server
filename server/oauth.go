@@ -1,8 +1,6 @@
 package server
 
 import (
-	"fmt"
-
 	"net/http"
 	"net/url"
 
@@ -21,13 +19,10 @@ func (s *Server) oauthBegin(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		return
 	}
-
-	fmt.Println(q.Encode())
-
 	u.RawQuery = q.Encode()
 	s.render(w, r, "oauth/begin.html", pongo2.Context{
 		"title": "Begin",
-		"url":   u.String(),
+		"url":   u,
 	})
 }
 
