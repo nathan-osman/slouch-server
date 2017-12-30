@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="spinner">
+    <img src="/static/img/spinner.svg">
+    <p>
+      <strong>Please wait</strong><br>
+      You are about to be redirected to Slack...<br><br>
+      <small>
+        Not working? <a href="{{ url }}">Click here</a> to continue.
+      </small>
+    </p>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    window.setTimeout(function() {
+      window.location.href = "{{ url }}";
+    }, 2000);
+  </script>
+{% endblock %}

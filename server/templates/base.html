@@ -12,15 +12,16 @@
   </head>
   <body>
 
-      <h1 class="title">
-        <img src="/static/img/logo.png">
-        Slouch
-        <small>Lightweight open-source desktop client for Slack&trade;.</small>
-      </h1>
+    <h1 class="title">
+      <img src="/static/img/logo.png">
+      Slouch
+      <small>Lightweight open-source desktop client for Slack&trade;.</small>
+    </h1>
 
     <div class="container">
-        {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
     </div>
 
+    {% block scripts %}{% endblock %}
   </body>
 </html>
