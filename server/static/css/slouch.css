@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2d9ee0;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 48pt;
+  font-weight: normal;
+  margin: 0;
+  text-align: center;
+}
+
+h1 small {
+  display: block;
+  font-size: 18pt;
+}
+
+@media only screen and (min-width: 840px) {
+  .container {
+    margin: auto;
+    width: 800px;
+  }
+}
