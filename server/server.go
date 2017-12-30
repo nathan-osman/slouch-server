@@ -35,6 +35,8 @@ func New(cfg *Config) (*Server, error) {
 			Handler: r,
 		}
 	)
+	r.HandleFunc("/", s.index)
+	r.PathPrefix("/static").Handler(http.FileServer(HTTP))
 	go func() {
 		defer close(s.stoppedChan)
 		defer s.log.Info("server has stopped")
