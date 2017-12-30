@@ -4,6 +4,7 @@ import (
 	"net"
 	"net/http"
 
+	"github.com/flosch/pongo2"
 	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
 )
@@ -11,6 +12,7 @@ import (
 // Server provides the web interface for the application.
 type Server struct {
 	listener    net.Listener
+	templateSet *pongo2.TemplateSet
 	log         *logrus.Entry
 	stoppedChan chan bool
 }
@@ -25,6 +27,7 @@ func New(cfg *Config) (*Server, error) {
 		r = mux.NewRouter()
 		s = &Server{
 			listener:    l,
+			templateSet: pongo2.NewSet("", &b0xLoader{}),
 			log:         logrus.WithField("context", "server"),
 			stoppedChan: make(chan bool),
 		}
