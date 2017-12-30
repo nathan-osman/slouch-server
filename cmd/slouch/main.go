@@ -6,6 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/nathan-osman/slouch-server/server"
 	"github.com/urfave/cli"
 )
 
@@ -32,6 +33,17 @@ func main() {
 		},
 	}
 	app.Action = func(c *cli.Context) error {
+
+		// Initialize the server
+		s, err := server.New(&server.Config{
+			ClientID:     c.String("client-id"),
+			ClientSecret: c.String("client-secret"),
+			Addr:         c.String("server-addr"),
+		})
+		if err != nil {
+			return err
+		}
+		defer s.Close()
 
 		// Wait for SIGINT or SIGTERM
 		sigChan := make(chan os.Signal)
