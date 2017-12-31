@@ -32,4 +32,8 @@ h1.title small {
     margin: auto;
     width: 800px;
   }
+
+  .media {
+    float: left;
+  }
 }
