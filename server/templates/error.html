@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <img src="/static/img/hole.jpg" class="media">
-  <h2>Something went wrong</h2>
-  <p>
-    An error occurred while processing your request.
-    Details are shown below:
-  </p>
-  <pre>Error: {{ error }}</pre>
+  <div class="flex">
+    <div>
+      <img src="/static/img/hole.jpg">
+    </div>
+    <div>
+      <h2>Something went wrong</h2>
+      <p>
+        An error occurred while processing your request.
+        Details are shown below:
+      </p>
+      <pre>Error: {{ error }}</pre>
+    </div>
+  </div>
 {% endblock%}

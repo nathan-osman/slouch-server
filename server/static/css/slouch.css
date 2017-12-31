@@ -8,23 +8,47 @@ body {
   margin: 0;
 }
 
-h1.title {
-  background-color: #fff;
-  box-shadow: 0 0 8px #ccc;
-  font-size: 48pt;
-  font-weight: normal;
-  margin: 0 0 48px 0;
-  padding: 16px 0;
-  text-align: center;
+h1, h2 {
+  margin: 0;
 }
 
-h1.title small {
-  display: block;
-  font-size: 16pt;
+#code {
+  background-color: transparent;
+  border: none;
+  font-family: monospace;
+  font-size: 12pt;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  margin: 20px;
 }
 
 .spinner {
   text-align: center;
+}
+
+.success {
+  text-align: center;
+}
+
+.title {
+  background-color: #fff;
+  box-shadow: 0 0 8px #ccc;
+  margin-bottom: 48px;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 48pt;
+  font-weight: normal;
+}
+
+.title h1 small {
+  display: block;
+  font-size: 16pt;
 }
 
 @media only screen and (min-width: 840px) {
@@ -33,7 +57,7 @@ h1.title small {
     width: 800px;
   }
 
-  .media {
-    float: left;
+  .flex {
+    display: flex;
   }
 }

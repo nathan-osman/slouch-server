@@ -1,3 +1,24 @@
 {% extends 'base.html' %}
 
-{% block content %}{% endblock%}
+{% block content %}
+  <div class="success">
+    <h2>Authorization Complete</h2>
+    <p>
+      Please return to the Slouch desktop client and enter the following text:
+    </p>
+    <br>
+    <textarea id="code" readonly>{{ access_token }}</textarea>
+    <br><br>
+    <button class="btn" id="copy">Copy</button>
+  </div>
+{% endblock%}
+
+{% block scripts %}
+  <script>
+    var code = document.getElementById('code');
+    document.getElementById('copy').addEventListener('click', function() {
+      code.select();
+      document.execCommand('copy');
+    });
+  </script>
+{% endblock %}
